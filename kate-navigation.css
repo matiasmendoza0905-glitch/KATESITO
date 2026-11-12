@@ -1,0 +1,99 @@
+/* NAVEGACIÓN KA'TÉECITO · independiente de estilos originales */
+:root{--kn-green:#214c32;--kn-orange:#e8892d;--kn-line:#e4e8da}
+html{scroll-behavior:smooth;scroll-padding-top:126px}
+#kate-global-header,#kate-global-header *,.kate-page-switcher,.kate-page-switcher *{box-sizing:border-box}
+#kate-global-header{position:sticky!important;top:0!important;z-index:99999!important;background:rgba(255,253,247,.975)!important;border-bottom:1px solid #e6e9df!important;box-shadow:0 7px 26px rgba(23,60,43,.075)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-family:Arial,'Segoe UI',sans-serif!important;color:var(--kn-green)!important;overflow:visible!important}
+#kate-global-header .kate-nav-shell{max-width:1500px;margin:auto;display:flex;align-items:center;gap:13px;padding:8px clamp(12px,2vw,28px);min-height:70px}
+#kate-global-header .kate-brand{display:flex;flex-shrink:0;align-items:center;gap:9px;text-decoration:none!important;color:var(--kn-green)!important}
+#kate-global-header .kate-brand img{width:93px;height:48px;object-fit:contain;display:block}
+#kate-global-header .kate-nav-controls{display:flex;align-items:center;gap:6px;min-width:0;flex:1}
+#kate-global-header .kate-track{display:flex;gap:5px;flex:1;min-width:0;overflow-x:auto;overflow-y:hidden;white-space:nowrap;scrollbar-width:none;overscroll-behavior-inline:contain;scroll-behavior:smooth;padding:5px 3px}
+#kate-global-header .kate-track::-webkit-scrollbar{display:none}
+#kate-global-header .kate-track a{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;padding:11px 13px;border-radius:12px;text-decoration:none!important;color:#48614a!important;background:transparent!important;border:1px solid transparent;font-size:12px!important;font-weight:700!important;line-height:1.25!important;letter-spacing:0!important;text-transform:none!important;transition:background .2s ease,color .2s ease,transform .2s ease}
+#kate-global-header .kate-track a:hover{background:#eef5e8!important;color:#214c32!important;transform:translateY(-1px)}
+#kate-global-header .kate-track a[aria-current="page"]{background:#215139!important;color:#fff!important;border-color:#215139!important;box-shadow:0 3px 11px rgba(24,71,45,.16)}
+#kate-global-header .kate-track .kate-nav-number{opacity:.65;font-size:10px;font-variant-numeric:tabular-nums}
+#kate-global-header .kate-track a[aria-current="page"] .kate-nav-number{opacity:.85}
+#kate-global-header .kate-arrow,#kate-global-header .kate-menu-button{flex:0 0 auto;display:inline-flex;justify-content:center;align-items:center;gap:7px;width:34px;height:36px;border:1px solid #dae5d7;border-radius:11px;background:#fff;color:#286041;cursor:pointer;font:bold 18px/1 Arial,sans-serif;transition:.2s ease}
+#kate-global-header .kate-arrow:hover,#kate-global-header .kate-menu-button:hover{background:#e9f3e5;border-color:#a9c9ae}
+#kate-global-header .kate-arrow:disabled{opacity:.28;cursor:default}
+#kate-global-header .kate-menu-button{width:auto;padding:0 12px;font-size:12px;white-space:nowrap}
+#kate-global-header .kate-menu-button svg{width:16px;height:16px;display:block}
+#kate-global-header .kate-menu-button[aria-expanded="true"]{background:#214c32;color:#fff;border-color:#214c32}
+#kate-global-header .kate-menu-panel{position:absolute;top:calc(100% + 5px);right:max(12px,calc((100vw - 1460px)/2));width:min(690px,calc(100vw - 24px));padding:18px;border-radius:19px;border:1px solid #e1e7d8;background:#fffefb;box-shadow:0 24px 55px rgba(18,47,29,.19);display:none;z-index:100000}
+#kate-global-header .kate-menu-panel.is-open{display:block}
+#kate-global-header .kate-menu-title{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:#667e66;font-weight:800;margin:0 0 12px}
+#kate-global-header .kate-menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+#kate-global-header .kate-menu-grid a{font:700 12px/1.4 Arial,sans-serif;color:#31523a!important;padding:12px;border-radius:10px;text-decoration:none!important;background:#f5f8f1;border:1px solid transparent;display:flex;gap:9px;align-items:flex-start}
+#kate-global-header .kate-menu-grid a:hover{background:#eaf3e7}
+#kate-global-header .kate-menu-grid a[aria-current="page"]{background:#e3efde;border-color:#b9d0b6;color:#17452a!important}
+#kate-global-header .kate-menu-grid small{font-size:10px;color:#799076;padding-top:1px}
+#kate-global-header a:focus-visible,#kate-global-header button:focus-visible,.kate-page-switcher a:focus-visible{outline:3px solid #e09b30!important;outline-offset:2px!important}
+.kate-page-switcher{font-family:Arial,'Segoe UI',sans-serif!important;max-width:1120px;margin:50px auto 38px;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:15px;clear:both}
+.kate-page-switcher a{min-width:0;display:flex;flex-direction:column;gap:7px;padding:17px 20px;border-radius:17px;text-decoration:none!important;border:1px solid #dfe6d7;background:#fffdf8;color:#1e4b32!important;transition:transform .2s ease,box-shadow .2s ease,border-color .2s}
+.kate-page-switcher a:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(28,71,44,.1);border-color:#b1cbae}
+.kate-page-switcher small{font:700 11px Arial,sans-serif;color:#7b8b77;letter-spacing:.5px;text-transform:uppercase}
+.kate-page-switcher strong{font:800 clamp(14px,1.5vw,19px)/1.35 Arial,sans-serif}
+.kate-page-switcher .kate-next{text-align:right;align-items:flex-end}
+.kate-page-switcher .kate-prev{text-align:left;align-items:flex-start}
+.kate-page-switcher .kate-empty{visibility:hidden}
+.kate-local-sections{max-width:1100px;margin:0 auto;padding:8px 16px;display:flex;gap:8px;align-items:center;overflow-x:auto;white-space:nowrap;scrollbar-width:thin}
+.kate-local-sections a{flex-shrink:0;text-decoration:none;color:#23533c;font:700 12px/1.2 Arial,sans-serif;padding:8px 13px;border-radius:999px;background:#f2f6ea;border:1px solid #e0eadb}
+.kate-local-sections a:hover{background:#e4f0e0}
+.kate-local-sections-wrap{background:#fffef9;border-bottom:1px solid #e6e9df}
+@media(max-width:850px){#kate-global-header .kate-nav-shell{padding:7px 11px;gap:6px;min-height:62px}#kate-global-header .kate-brand img{width:66px;height:42px}#kate-global-header .kate-track a{padding:10px 11px}#kate-global-header .kate-arrow{display:none}#kate-global-header .kate-menu-button{font-size:0;width:38px;padding:0}#kate-global-header .kate-menu-button svg{width:19px;height:19px}#kate-global-header .kate-menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}html{scroll-padding-top:78px}}
+@media(max-width:470px){#kate-global-header .kate-brand img{width:52px;height:39px}#kate-global-header .kate-nav-shell{gap:5px;padding:6px 8px}#kate-global-header .kate-menu-grid{grid-template-columns:1fr}#kate-global-header .kate-menu-panel{max-height:75vh;overflow-y:auto;padding:13px}#kate-global-header .kate-track a{font-size:11px!important;padding:10px 9px}.kate-page-switcher{grid-template-columns:1fr;gap:10px}.kate-page-switcher .kate-empty{display:none}}
+@media(prefers-reduced-motion:reduce){#kate-global-header .kate-track{scroll-behavior:auto!important}#kate-global-header *, .kate-page-switcher *{transition:none!important}}
+@media print{#kate-global-header,.kate-page-switcher,.kate-local-sections-wrap{display:none!important}}
+
+/* Rediseño 2026: barra de pestañas accesible con espacio para títulos largos */
+#kate-global-header{background:linear-gradient(180deg,#fffdf8 0%,#f8fbf2 100%)!important;border-bottom:2px solid #e0e9d3!important;box-shadow:0 7px 24px rgba(31,76,47,.10)!important}
+#kate-global-header .kate-nav-shell{max-width:1600px;gap:17px;min-height:82px;padding-top:11px;padding-bottom:11px}
+#kate-global-header .kate-brand{background:#fff;border:1px solid #e4eadd;border-radius:15px;padding:5px 10px;box-shadow:0 3px 12px #274c2810}
+#kate-global-header .kate-brand img{width:105px;height:53px}
+#kate-global-header .kate-nav-controls{background:#f0f5e9;border:1px solid #e0e9d5;padding:5px 6px;border-radius:17px;gap:8px}
+#kate-global-header .kate-track{gap:7px;scrollbar-width:thin;scrollbar-color:#b4c6a3 transparent;scroll-padding-inline:25px;padding:6px 4px}
+#kate-global-header .kate-track::-webkit-scrollbar{display:block;height:5px}
+#kate-global-header .kate-track::-webkit-scrollbar-thumb{background:#b4c6a3;border-radius:9px}
+#kate-global-header .kate-track a{background:#fffefa!important;border:1px solid #e5e9da;border-radius:12px;padding:12px 15px;min-height:48px;box-shadow:0 1px 3px #294a2610;transition:background .2s,box-shadow .2s,transform .2s}
+#kate-global-header .kate-track a:hover{background:#fff3d9!important;border-color:#f0c27c;color:#754100!important}
+#kate-global-header .kate-track a[aria-current="page"]{background:#406300!important;border-color:#406300!important;box-shadow:0 4px 12px #365b253c!important;color:#fff!important}
+#kate-global-header .kate-track .kate-nav-number{background:#eef2e7;color:#557044;border-radius:7px;padding:4px 5px;font-weight:800;opacity:1}
+#kate-global-header .kate-track a[aria-current="page"] .kate-nav-number{background:#ffffff2c;color:white;opacity:1}
+#kate-global-header .kate-track a[href="imagen-verbal.html"]{white-space:normal;line-height:1.35!important;max-width:290px;min-width:235px}
+#kate-global-header .kate-arrow{height:44px;width:42px;font-size:25px;border-radius:12px;background:#fff;color:#365923}
+#kate-global-header .kate-menu-button{height:44px;background:#e67300;color:white;border-color:#e67300;padding:0 15px;font-size:13px}
+#kate-global-header .kate-menu-button:hover,#kate-global-header .kate-menu-button[aria-expanded="true"]{background:#c85d00;color:#fff;border-color:#c85d00}
+#kate-global-header .kate-menu-grid a[href="imagen-verbal.html"]{grid-column:span 2}
+#kate-global-header .kate-menu-panel{border-top:4px solid #e67300}
+html{scroll-padding-top:150px}
+@media(max-width:850px){#kate-global-header .kate-nav-shell{min-height:64px;gap:7px;padding:7px 9px}#kate-global-header .kate-brand{padding:3px 5px}#kate-global-header .kate-brand img{width:65px;height:38px}#kate-global-header .kate-nav-controls{padding:3px;gap:3px}#kate-global-header .kate-track a{min-height:42px;padding:9px 11px}#kate-global-header .kate-track a[href="imagen-verbal.html"]{min-width:204px;max-width:245px}#kate-global-header .kate-arrow{display:inline-flex;width:30px;height:38px;font-size:19px}#kate-global-header .kate-menu-button{width:36px;height:38px;padding:0}#kate-global-header .kate-menu-grid a[href="imagen-verbal.html"]{grid-column:span 2}html{scroll-padding-top:110px}}
+@media(max-width:470px){#kate-global-header .kate-brand img{width:48px;height:34px}#kate-global-header .kate-arrow{width:24px;font-size:16px}#kate-global-header .kate-menu-grid a[href="imagen-verbal.html"]{grid-column:span 1}#kate-global-header .kate-track a[href="imagen-verbal.html"]{min-width:200px}#kate-global-header .kate-track a{font-size:11px!important}}
+
+/* Ajuste solicitado: logotipo centrado por encima de toda la barra de pestañas.
+   Sólo cambia la colocación: no se altera el contenido ni la funcionalidad. */
+#kate-global-header .kate-nav-shell{
+  display:flex!important;flex-direction:column!important;align-items:stretch!important;
+  gap:8px!important;padding-top:9px!important;padding-bottom:10px!important;
+}
+#kate-global-header .kate-brand{
+  align-self:center!important;justify-content:center!important;
+  flex:0 0 auto!important;margin:0 auto!important;
+}
+#kate-global-header .kate-brand img{width:140px!important;height:66px!important;object-fit:contain!important}
+#kate-global-header .kate-nav-controls{width:100%!important;flex:1 1 auto!important;min-width:0!important}
+#kate-global-header .kate-track{min-width:0!important;width:0!important;flex:1 1 auto!important}
+html{scroll-padding-top:205px}
+@media(max-width:850px){
+ #kate-global-header .kate-nav-shell{gap:6px!important;padding-top:6px!important;padding-bottom:7px!important}
+ #kate-global-header .kate-brand img{width:110px!important;height:52px!important}
+ html{scroll-padding-top:170px}
+}
+@media(max-width:470px){
+ #kate-global-header .kate-brand img{width:98px!important;height:46px!important}
+ html{scroll-padding-top:160px}
+}
+
+/* Logotipo oficial PNG transparente, sin placa de fondo en la cabecera. */
+#kate-global-header .kate-brand{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;border-radius:0!important}
+#kate-global-header .kate-brand img{background:transparent!important;filter:none!important;object-fit:contain!important}

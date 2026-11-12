@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#fff8e9" name="theme-color"/>
+<title>Comunicación | Ka'tée Cito</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
+/* Diseño exclusivo de Comunicación: solo HTML y CSS */
+*{box-sizing:border-box}
+body{overflow-x:hidden}
+.com-page{position:relative;isolation:isolate;max-width:1180px;margin:auto;padding:36px 20px 72px}
+.com-page::before{content:"";position:absolute;z-index:-2;inset:0;background:linear-gradient(120deg,#fff9edda,#fff8e9eb),url('img/galeria/afiche-publicidad.jpg') center/cover fixed;filter:blur(3px)}
+.com-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:center;min-height:380px}
+.com-eyebrow{font-size:12px;letter-spacing:.2em;font-weight:800;color:#406300;text-transform:uppercase}
+.com-hero h1{font-family:Georgia,serif;font-size:clamp(48px,7vw,88px);line-height:1.04;color:#c4350a;margin:16px 0}
+.com-hero p{font-size:clamp(16px,2vw,20px);line-height:1.6;max-width:430px;color:#483c2b}
+.com-hero img{width:100%;height:340px;object-fit:cover;border-radius:28px;box-shadow:0 18px 45px #6c54262a}
+.com-rule{width:60px;height:3px;background:#e67300;margin:24px 0}
+.com-section{margin-top:54px}
+.com-section h2{font-family:Georgia,serif;font-size:clamp(26px,3vw,36px);color:#314d14;margin:0 0 12px}
+.com-section>p{color:#5f594d;line-height:1.6;margin:0 0 24px}
+.com-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.com-card{background:#fffdf8e8;border:1px solid #eadfc9;border-radius:20px;padding:26px;min-height:184px;box-shadow:0 8px 28px #503f2110;transition:transform .35s ease,box-shadow .35s ease}
+.com-card:hover{transform:translateY(-7px);box-shadow:0 16px 34px #503f2127}
+@keyframes suaveFlotar{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes suaveAparecer{from{opacity:.3;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.com-hero{animation:suaveAparecer 1s ease-out both}
+.com-card{animation:suaveFlotar 5s ease-in-out infinite}
+.com-card:nth-child(2){animation-delay:-1.6s}
+.com-card:nth-child(3){animation-delay:-3.2s}
+.com-card:hover{animation-play-state:paused}
+@keyframes imagenRespira{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+.com-hero img{animation:imagenRespira 8s ease-in-out infinite}
+
+.com-card .symbol{font-size:29px}
+.com-card h3{font-size:19px;margin:18px 0 9px;color:#aa390f}
+.com-card p{font-size:15px;line-height:1.65;color:#62594b;margin:0}
+.com-gallery{display:flex;gap:15px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 18px;scrollbar-color:#e67300 #f4e7d0}
+.com-gallery a{flex:0 0 clamp(190px,27%,280px);height:195px;scroll-snap-align:start;display:block;border-radius:17px;overflow:hidden;box-shadow:0 8px 18px #44331a21}
+.com-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.com-gallery a:hover img{transform:scale(1.05)}
+.com-hint{font-size:13px;color:#726754}
+.com-quote{margin-top:55px;border-radius:24px;padding:42px 35px;background:linear-gradient(110deg,#31531bdf,#31531b9a),url('img/galeria/identidad-logo-paleta.png') center/cover;color:white}
+.com-quote p{font:clamp(25px,3.5vw,42px)/1.25 Georgia,serif;max-width:580px;margin:0}
+.com-lightbox{position:fixed;inset:0;background:#111e;z-index:9999;display:none;align-items:center;justify-content:center;padding:55px 18px 30px}
+.com-lightbox:target{display:flex}
+.com-lightbox figure{margin:0;max-width:min(100%,1050px);max-height:100%;text-align:center}
+.com-lightbox img{display:block;max-width:100%;max-height:72vh;object-fit:contain;margin:auto;border-radius:9px;transition:transform .25s}
+.com-lightbox figcaption{color:white;margin-top:13px}
+.com-close{position:absolute;right:24px;top:15px;color:white;background:#c4350a;padding:9px 16px;border-radius:20px;text-decoration:none;font-weight:700}
+.com-zoom{position:absolute;left:24px;top:15px;color:white;display:flex;gap:8px;align-items:center;font-size:14px}
+.com-zoom input{accent-color:#ffdd00;width:19px;height:19px}
+.com-lightbox:has(.com-zoom input:checked) img{transform:scale(1.25)}
+@media(max-width:720px){.com-page{padding:24px 16px 50px}.com-hero{grid-template-columns:1fr;gap:20px}.com-hero img{height:230px}.com-cards{grid-template-columns:1fr 1fr;gap:12px}.com-card{padding:18px;min-height:170px}.com-card h3{font-size:16px}.com-card p{font-size:13px}.com-gallery a{flex-basis:70%;height:200px}.com-quote{padding:30px 22px}}
+@media(max-width:420px){.com-cards{grid-template-columns:1fr}.com-card{min-height:auto}}
+@media(prefers-reduced-motion:reduce){.com-card,.com-gallery img,.com-lightbox img,.com-hero,.com-hero img{transition:none;animation:none!important}}
+.com-close{position:fixed!important;top:16px!important;right:16px!important;left:auto!important;z-index:100005!important;background:#fff!important;color:#222!important;padding:12px 18px!important;border-radius:25px!important;text-decoration:none!important}.com-prev,.com-next{position:fixed;top:50%;z-index:100004;background:#fffedb;color:#2c381b;padding:12px;border-radius:40px;text-decoration:none;font-size:24px}.com-prev{left:8px}.com-next{right:8px}</style>
+<link href="kate-navigation.css" rel="stylesheet"/><script defer="True" src="kate-navigation.js"></script><link href="kate-interactive.css" rel="stylesheet"/></head>
+<body style="--fondo-pagina:url('img/galeria/afiche-publicidad.jpg')">
+<header aria-label="Navegación principal de Ka'tée Cito" id="kate-global-header"><div class="kate-nav-shell"><a aria-label="Ir a Inicio" class="kate-brand" href="index.html"><img alt="Ka'tée Cito" src="img/logo-kateecito.png"/></a><div class="kate-nav-controls"><button aria-label="Desplazar pestañas a la izquierda" class="kate-arrow" data-move="left" type="button">‹</button><nav aria-label="Pestañas del sitio" class="kate-track"><a href="index.html"><span class="kate-nav-number">01</span>Inicio</a><a href="empresa.html"><span class="kate-nav-number">02</span>Empresa</a><a href="publico.html"><span class="kate-nav-number">03</span>Público objetivo</a><a href="identidad-corporativa.html"><span class="kate-nav-number">04</span>Identidad corporativa</a><a href="identidad-visual.html"><span class="kate-nav-number">05</span>Identidad visual</a><a href="imagen-institucional.html"><span class="kate-nav-number">06</span>Imagen institucional</a><a href="aplicaciones.html"><span class="kate-nav-number">07</span>Aplicaciones</a><a aria-current="page" href="comunicacion.html"><span class="kate-nav-number">08</span>Comunicación</a><a href="comunicacion-corporativa.html"><span class="kate-nav-number">09</span>Comunicación corporativa</a><a href="manual-identidad.html"><span class="kate-nav-number">10</span>Manual de identidad</a><a href="propuestas-mejora.html"><span class="kate-nav-number">11</span>Propuestas de mejora</a><a href="auditoria-imagen.html"><span class="kate-nav-number">12</span>Auditoría de imagen</a><a href="imagen-publica.html"><span class="kate-nav-number">13</span>Imagen pública</a><a href="imagen-verbal.html"><span class="kate-nav-number">14</span>IMAGOLOGÍA · ICONOLOGÍA · IMAGEN VERBAL</a></nav><button aria-label="Desplazar pestañas a la derecha" class="kate-arrow" data-move="right" type="button">›</button><button aria-controls="kate-page-menu" aria-expanded="false" aria-label="Mostrar todas las pestañas" class="kate-menu-button" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.1" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg> Secciones</button></div></div><div class="kate-menu-panel" id="kate-page-menu"><p class="kate-menu-title">Explorar las secciones</p><div class="kate-menu-grid"><a href="index.html"><small>01</small>Inicio</a><a href="empresa.html"><small>02</small>Empresa</a><a href="publico.html"><small>03</small>Público objetivo</a><a href="identidad-corporativa.html"><small>04</small>Identidad corporativa</a><a href="identidad-visual.html"><small>05</small>Identidad visual</a><a href="imagen-institucional.html"><small>06</small>Imagen institucional</a><a href="aplicaciones.html"><small>07</small>Aplicaciones</a><a aria-current="page" href="comunicacion.html"><small>08</small>Comunicación</a><a href="comunicacion-corporativa.html"><small>09</small>Comunicación corporativa</a><a href="manual-identidad.html"><small>10</small>Manual de identidad</a><a href="propuestas-mejora.html"><small>11</small>Propuestas de mejora</a><a href="auditoria-imagen.html"><small>12</small>Auditoría de imagen</a><a href="imagen-publica.html"><small>13</small>Imagen pública</a><a href="imagen-verbal.html"><small>14</small>IMAGOLOGÍA · ICONOLOGÍA · IMAGEN VERBAL</a></div></div></header>
+<main class="com-page">
+<section class="com-hero">
+<div><span class="com-eyebrow">Ka'tée Cito · Siente lo Natural</span><h1>Comunicación</h1>
+<div class="com-rule"></div><p>Conectamos con personas que valoran lo natural, a través de mensajes claros, cercanos y auténticos.</p></div>
+<img alt="Comunicación visual de Ka'tée Cito" src="img/galeria/afiche-publicidad.jpg"/>
+</section>
+<section class="com-section" id="galeria"><h2>Galería de comunicación</h2>
+<p>Desliza la cinta y toca una imagen para verla más grande.</p>
+<div class="com-gallery">
+<a href="#foto1"><img alt="Publicaciones en Instagram" loading="lazy" src="img/galeria/instagram-publicaciones.jpg"/></a>
+<a href="#foto2"><img alt="Comunicación en redes móviles" loading="lazy" src="img/galeria/redes-moviles.jpg"/></a>
+<a href="#foto3"><img alt="Afiche publicitario" loading="lazy" src="img/galeria/afiche-publicidad.jpg"/></a>
+<a href="#foto4"><img alt="Atención por WhatsApp" loading="lazy" src="img/galeria/whatsapp-contacto.jpg"/></a>
+<a href="#foto5"><img alt="Comunicación en TikTok" loading="lazy" src="img/galeria/tiktok-comunicacion.jpg"/></a>
+</div><p class="com-hint">En la vista ampliada puedes activar «Ampliar» y desactivarlo para reducir la imagen.</p>
+</section>
+<section class="com-mensajes">
+<div class="com-quote"><h3>Mensaje principal</h3><p>“Más que un mensaje, una conexión natural.”</p></div>
+<div class="com-quote"><h3>Eslogan</h3><p>“Siente lo Natural”</p></div>
+</section>
+<div class="pager"><a href="aplicaciones.html">← Aplicaciones</a><a href="manual-identidad.html">Manual de identidad corporativa →</a></div>
+</main>
+<nav aria-label="Ir a otra pestaña" class="kate-page-switcher"><a class="kate-prev" href="aplicaciones.html"><small>Pestaña anterior</small><strong>← Aplicaciones</strong></a><a class="kate-next" href="comunicacion-corporativa.html"><small>Siguiente pestaña</small><strong>Comunicación corporativa →</strong></a></nav><footer class="brand-footer"><div class="brand-footer-inner"><div class="footer-brand"><img alt="Ka'tée Cito" src="img/logo-kateecito.png"/><strong>Ka'tée Cito · Siente lo Natural</strong></div><div aria-label="Canales de contacto" class="footer-contacts"><a aria-label="WhatsApp" href="#"><img alt="" src="img/social/whatsapp.svg"/><small>WhatsApp</small></a><a aria-label="Instagram" href="#"><img alt="" src="img/social/instagram.svg"/><small>Instagram</small></a><a aria-label="Facebook" href="#"><img alt="" src="img/social/facebook.svg"/><small>Facebook</small></a><a aria-label="TikTok" href="#"><img alt="" src="img/social/tiktok.svg"/><small>TikTok</small></a><a aria-label="Correo" href="#"><img alt="" src="img/social/mail.svg"/><small>Correo</small></a><a aria-label="Ubicación" href="#"><img alt="" src="img/social/location.svg"/><small>Ubicación</small></a></div></div></footer>
+<!-- Galería ampliable sin JavaScript -->
+<div class="com-lightbox" id="foto1"><a aria-label="Cerrar imagen" class="com-close" href="#galeria">✕ Cerrar</a><label class="com-zoom"><input type="checkbox"/> Ampliar / reducir</label><figure><img alt="Publicaciones en Instagram" src="img/galeria/instagram-publicaciones.jpg"/><figcaption>Publicaciones en Instagram · 1 de 5</figcaption></figure><a aria-label="Imagen anterior" class="com-prev" href="#foto5">❮</a><a aria-label="Imagen siguiente" class="com-next" href="#foto2">❯</a></div>\n<div class="com-lightbox" id="foto2"><a aria-label="Cerrar imagen" class="com-close" href="#galeria">✕ Cerrar</a><label class="com-zoom"><input type="checkbox"/> Ampliar / reducir</label><figure><img alt="Redes móviles" src="img/galeria/redes-moviles.jpg"/><figcaption>Redes móviles · 2 de 5</figcaption></figure><a aria-label="Imagen anterior" class="com-prev" href="#foto1">❮</a><a aria-label="Imagen siguiente" class="com-next" href="#foto3">❯</a></div>\n<div class="com-lightbox" id="foto3"><a aria-label="Cerrar imagen" class="com-close" href="#galeria">✕ Cerrar</a><label class="com-zoom"><input type="checkbox"/> Ampliar / reducir</label><figure><img alt="Afiche publicitario" src="img/galeria/afiche-publicidad.jpg"/><figcaption>Afiche publicitario · 3 de 5</figcaption></figure><a aria-label="Imagen anterior" class="com-prev" href="#foto2">❮</a><a aria-label="Imagen siguiente" class="com-next" href="#foto4">❯</a></div>\n<div class="com-lightbox" id="foto4"><a aria-label="Cerrar imagen" class="com-close" href="#galeria">✕ Cerrar</a><label class="com-zoom"><input type="checkbox"/> Ampliar / reducir</label><figure><img alt="Atención por WhatsApp" src="img/galeria/whatsapp-contacto.jpg"/><figcaption>Atención por WhatsApp · 4 de 5</figcaption></figure><a aria-label="Imagen anterior" class="com-prev" href="#foto3">❮</a><a aria-label="Imagen siguiente" class="com-next" href="#foto5">❯</a></div>\n<div class="com-lightbox" id="foto5"><a aria-label="Cerrar imagen" class="com-close" href="#galeria">✕ Cerrar</a><label class="com-zoom"><input type="checkbox"/> Ampliar / reducir</label><figure><img alt="Comunicación en TikTok" src="img/galeria/tiktok-comunicacion.jpg"/><figcaption>Comunicación en TikTok · 5 de 5</figcaption></figure><a aria-label="Imagen anterior" class="com-prev" href="#foto4">❮</a><a aria-label="Imagen siguiente" class="com-next" href="#foto1">❯</a></div>\n<script src="kate-interactive.js"></script></body></html>
